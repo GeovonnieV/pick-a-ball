@@ -27,4 +27,9 @@ module.exports = {
         .then((deleted) => res.json(deleted))
         .catch((err) => res.json(err));
     },
+    findGames: (req, res) => {
+        Games.find({sport})
+        .then((findGames) => res.json(findGames))
+        .catch((err) => res.json(err));
+    }
 };

@@ -22,7 +22,7 @@ const NavbarComp = () => {
           <Nav className="mr-auto">
             <Link to="/">
               <Nav.Link
-                href="#home"
+                href="/home"
                 className="navItem"
                 style={{ color: "#ffff" }}
               >
@@ -52,9 +52,8 @@ const NavbarComp = () => {
         {/* signed in as nav */}
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as:{" "}
-            <a href="#login" style={{ color: "#ffff" }}>
-              users name here
+            Signed in as:
+            <a href="/login" style={{ color: "#ffff" }} type="text" placeholder="Username" name="username"> 
             </a>
           </Navbar.Text>
         </Navbar.Collapse>
