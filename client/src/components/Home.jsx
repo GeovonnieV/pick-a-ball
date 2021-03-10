@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 // import nav component
 import NavbarComp from "./NavbarComp";
+import {Link} from '@reach/router';
 import { Jumbotron, Container, Button } from "react-bootstrap";
 // axios to make calls to backend
 import axios from "axios";
@@ -15,6 +16,15 @@ const Home = () => {
       .catch((err) => console.log(err))
   }, []);
 
+const deleteGame = (e, gameId) => {
+    axios
+    .delete("http://localhost:8000/api/games/" + gameId)
+    .then((res) => {
+        console.log(res.data);
+        setAllGames(games.filter((game) => game._id !== gameId));
+    })
+    .catch((err) => console.log(err));
+}
 
   return (
     <div>
@@ -22,16 +32,21 @@ const Home = () => {
       <div className="container">
         <h1 className="homeHead">Upcoming Games</h1>
         <Jumbotron fluid className="homeJumbo">
-          <Container>
+          <Container className="head-comp-container">
             {
               games.map((game,index) => (
                 <div key={index}>
-                  <h3>You Have a {game.sport} game on {game.date}</h3>
-                  <p>be there by {game.time} @ {game.location}</p>
-                  <Button variant="outline-primary">Delte Game</Button>{' '}
+                  <h3>You Have a {game.sport} game on {(new Date(game.date)).toLocaleDateString("en-us")}</h3>
+                  <p>be there by {game.time}:00 @ {game.location}</p>
+                  <p>
+                      <Link to={`/games/${game._id}`}>Details</Link>
+                  </p>
+                  <button onClick ={ (e) => deleteGame(e, game._id) }>Delete</button>
+                  <Link varient="outline-success" to={`/api/games/${game._id}`}>Update Game</Link>
+                  {/* <Button variant="outline-success">Update Game</Button>{' '} */}
                 </div>
               ))
-            };
+            }
 
             {/* if theres no games show this in the jumbotron */}
 
