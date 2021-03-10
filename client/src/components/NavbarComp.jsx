@@ -38,7 +38,7 @@ const NavbarComp = () => {
                 Create
               </Nav.Link>
             </Link>
-            <Link to="/updateGame">
+            <Link to="/">
               <Nav.Link
                 href="#link"
                 className="navItem"
