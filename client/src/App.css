@@ -13,6 +13,36 @@
   }
 }
 
+.widthClass{
+  width: 80%;
+  padding: 10%;
+}
+
+.error-message{
+  color: red;
+}
+
+.redButton{
+  background-color: red;
+  color: black;
+  margin: 30px 20px 0px 20px;
+  width: 100px;
+}
+
+.blueButton{
+  background-color: lightblue;
+  color: black;
+  margin: 30px 20px 0px 20px;
+  width: 100px;
+}
+
+.yellowButton{
+  background-color: lightyellow;
+  color: black;
+  margin: 30px 20px 0px 20px;
+  width: 175px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

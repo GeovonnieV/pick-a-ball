@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 import axios from 'axios';
+import { Jumbotron, Container, Button } from "react-bootstrap";
+
 
 const OneGame = (props) => {
     const [ game, setGame ] = useState({});
@@ -22,21 +24,23 @@ const OneGame = (props) => {
     }
         
         return (
-            <div>
-                <h2> {game.sport} Game</h2>
-                <p>Sport: {game.sport}</p>
-                <p>City: {game.city}</p>
-                <p>State: {game.state}</p>
-                <p>Location: {game.location}</p>
-                <p>Players: {game.players}</p>
-                <p>Date: {game.date}</p>
-                <p>Time: {game.time}</p>
+            <div className="widthClass">
+            <div fluid class="card">
+                <h2  class="card-header"> {game.sport} Game</h2>
+                <p class="body">Sport: {game.sport}</p>
+                <p class="text">City: {game.city}</p>
+                <p class="text">State: {game.state}</p>
+                <p class="text">Location: {game.location}</p>
+                <p class="text">Players: {game.players}</p>
+                <p class="text">Date: {(new Date(game.date)).toLocaleDateString("en-us")}</p>
+                <p class="text">Time: {game.time}:00</p>
 
 
                 <Link to="/">
-                <button onClick ={ (e) => deleteGame(e, game._id) }>Delete</button>
-                <button>Back</button>
+                <button className="redButton"onClick ={ (e) => deleteGame(e, game._id) }>Delete</button>
+                <button className="blueButton">Back</button>
                 </Link>
+                </div>
                 </div>
         )
 }

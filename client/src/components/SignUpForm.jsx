@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from '@reach/router';
+import "../App.css"
 
 const SignUp = props => {
   const [username, setUsername] = useState("");
@@ -37,8 +39,8 @@ const SignUp = props => {
   };
 
   return (
-    <fieldset>
-      <legend>Sign Up</legend>
+    <fieldset fluid class="card">
+      <legend class="card-header">Sign Up</legend>
 
       <form onSubmit={register}>
         <div className="form-group">
@@ -103,8 +105,13 @@ const SignUp = props => {
           )}
         </div>
 
-        <input type="submit" value="Sign Up" className="btn" />
+
+        <input type="submit" value="Sign Up" className="blueButton" />
       </form>
+      <Link to="/">
+                
+                <button className="yellowButton">Return to Home</button>
+                </Link>
     </fieldset>
   );
 };

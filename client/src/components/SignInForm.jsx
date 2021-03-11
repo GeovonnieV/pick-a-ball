@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Jumbotron, Container, Button } from "react-bootstrap";
 
 import axios from "axios";
 import { navigate } from "@reach/router";
@@ -32,8 +33,8 @@ const SignIn = props => {
   };
 
   return (
-    <fieldset>
-      <legend>Sign In</legend>
+    <fieldset fluid class="card">
+      <legend class="card-header" >Sign In</legend>
       <form onSubmit={login}>
         <p className="form-group">
           <label>Email:</label>
@@ -53,7 +54,7 @@ const SignIn = props => {
             value={password}
           />
         </p>
-        <input type="submit" value="Sign In" className="btn" />
+        <input type="submit" className="blueButton" value="Sign In"/>
         <p className="error-message">{errorMessage ? errorMessage : ""}</p>
       </form>
     </fieldset>

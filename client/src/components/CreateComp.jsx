@@ -139,10 +139,10 @@ const CreateComp = () => {
           {/* email */}
           <Form.Group as={Row}>
             <Form.Label column sm="3">
-              Email
+              Phone Number
             </Form.Label>
             <Col sm="8">
-              <Form.Control size="md" type="text" placeholder="phone number" onChange={(e) => setNumber(e.target.value)} />
+              <Form.Control size="md" type="text" placeholder="Phone Number" onChange={(e) => setNumber(e.target.value)} />
             </Col>
           </Form.Group>
           <Button type="submit" variant="outline-primary">Create</Button>{' '}

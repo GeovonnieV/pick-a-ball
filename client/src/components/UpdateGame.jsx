@@ -14,7 +14,7 @@ const [location, setLocation] = useState("");
 const [players, setPlayers] = useState("");
 const [time, setTime] = useState("");
 const [date, setDate] = useState("");
-const [email, setEmail] = useState("");
+const [number, setNumber] = useState("");
 const [errors, setErrors] = useState([]);
 
 useEffect(()=>{
@@ -29,7 +29,7 @@ useEffect(()=>{
             setPlayers(res.data.players);
             setTime(res.data.time);
             setDate(res.data.date);
-            setEmail(res.data.email);
+            setNumber(res.data.number);
         })
 
 }, [])
@@ -45,7 +45,7 @@ const editGame = (e) => {
             players: players,
             time: time,
             date: date,
-            email: email,
+            number: number,
         })
         .then((res) => {
             if(res.data.errors){
@@ -135,13 +135,13 @@ const editGame = (e) => {
             <input type="date" format="mm-dd-yyyy" className="order-2 mr-auto ml-3 d-inline float-right" onChange={(e) => setDate(e.target.value)} />
             </Col>
           </Form.Group>
-          {/* email */}
+          {/* number */}
           <Form.Group as={Row}>
             <Form.Label column sm="3"> 
-              Email
+              Phone Number
             </Form.Label>
             <Col sm="8">
-            <Form.Control size="md" type="text" placeholder={email} onChange={(e) => setEmail(e.target.value)}/>
+            <Form.Control size="md" type="text" placeholder={number} onChange={(e) => setNumber(e.target.value)}/>
             </Col>
           </Form.Group>  
           <Button type="submit" variant="outline-primary">Update</Button>{' '}

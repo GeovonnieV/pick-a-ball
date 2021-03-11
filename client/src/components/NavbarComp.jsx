@@ -38,13 +38,13 @@ const NavbarComp = () => {
                 Create
               </Nav.Link>
             </Link>
-            <Link to="/updateGame">
+            <Link to="/login">
               <Nav.Link
                 href="#link"
                 className="navItem"
                 style={{ color: "#ffff" }}
               >
-                MyGames
+                Login or Sign Up!
               </Nav.Link>
             </Link>
           </Nav>

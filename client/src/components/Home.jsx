@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 // import nav component
 import NavbarComp from "./NavbarComp";
+import "../App.css"
 import {Link} from '@reach/router';
 import { Jumbotron, Container, Button } from "react-bootstrap";
 // axios to make calls to backend
@@ -41,8 +42,8 @@ const deleteGame = (e, gameId) => {
                   <p>
                       <Link to={`/games/${game._id}`}>Details</Link>
                   </p>
-                  <button onClick ={ (e) => deleteGame(e, game._id) }>Delete</button>
-                  <Link varient="outline-success" to={`/api/games/${game._id}`}>Update Game</Link>
+                  <button className="redButton" onClick ={ (e) => deleteGame(e, game._id) }>Delete</button>
+                  <Link varient="outline-success"  to={`/api/games/${game._id}`}>Update Game</Link>
                   {/* <Button variant="outline-success">Update Game</Button>{' '} */}
                 </div>
               ))
